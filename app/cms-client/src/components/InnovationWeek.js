@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Toolbar from 'components/Toolbar/Toolbar';
-import { Component as Breadcrumb } from 'components/Breadcrumb/Breadcrumb';
 import ReactMarkdown from 'react-markdown';
+import { loadComponent } from 'lib/Injector';
 
 const breadcrumbs = [
   {
@@ -10,34 +9,15 @@ const breadcrumbs = [
   },
 ];
 
+const LeftAndMain = loadComponent('LeftAndMain');
 
-const InnovationWeek = ({ mdUrl }) => {
+const InnovationWeek = () => {
   const [md, setMd] = useState('# Loading... please wait\n\nMark down work!!!');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(mdUrl);
-        const content = await response.text();
-        setMd(content);
-      } catch (error) {
-        setMd('# Could not load markdown file');
-        console.error(error);
-      }
-    };
-
-    fetchData();
-}, []);
-
-
   return (
-    <div className="fill-height">
-      <Toolbar className="fill-width">
-        <Breadcrumb multiline crumbs={breadcrumbs} />
-
-      </Toolbar>
+    <LeftAndMain>
       <ReactMarkdown>{md}</ReactMarkdown>
-    </div>
+    </LeftAndMain>
   );
 };
 
