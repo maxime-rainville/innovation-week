@@ -1,0 +1,68 @@
+{
+    "name": "maxime-rainville/innovation-week",
+    "type": "silverstripe-recipe",
+    "description": "SilverStripe recipe for fully featured page and asset content editing",
+    "homepage": "http://silverstripe.org",
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "silverstripe/recipe-plugin": "^1.5",
+        "silverstripe/recipe-cms": "4.x-dev",
+        "silverstripe/installer": "4.x-dev",
+        "maxime-rainville/silverstripe-react": "dev-feature/react-admin",
+        "silverstripe/graphql-devtools": "1.x-dev",
+        "silverstripe-themes/simple": "~3.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "extra": {
+        "resources-dir": "_resources",
+        "project-files-installed": [
+            ".env.example",
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/assets.yml",
+            "app/_config/email.yml",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml",
+            "app/_config/recipe-react.yml",
+            "app/_config/theme.yml",
+            "app/cms-client/.eslintrc.js",
+            "app/cms-client/.gitignore",
+            "app/cms-client/package.json",
+            "app/cms-client/src/boot/index.js",
+            "app/cms-client/src/boot/registerComponents.js",
+            "app/cms-client/src/bundles/bundle.js",
+            "app/cms-client/src/bundles/bundle.scss",
+            "app/cms-client/src/components/index.js",
+            "app/cms-client/src/styles/styles.scss",
+            "app/cms-client/webpack.config.js",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "assets/.gitignore",
+            "assets/.htaccess",
+            "assets/web.config",
+            "favicon.ico",
+            "index.php",
+            "web.config"
+        ],
+        "expose": [
+            "app/cms-client/dist",
+            "app/help"
+        ]
+    },
+    "config": {
+        "process-timeout": 600,
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true,
+            "silverstripe/recipe-plugin": true
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
