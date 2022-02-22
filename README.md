@@ -1,32 +1,24 @@
-## Silverstripe CMS Recipe
+## React admin dummy project
 
-[![Build Status](https://api.travis-ci.com/silverstripe/recipe-cms.svg?branch=4)](https://travis-ci.com/silverstripe/recipe-cms)
+This is a dummy project to do some work on the `maxime-rainville/silverstripe-react`. It it will install the the [`feature/react-admin`](https://github.com/maxime-rainville/silverstripe-react/tree/feature/react-admin) branch of `silverstripe-react`. Direct all `silverstripe-react` PRs to that branch.
 
-Base page and asset content-editing recipe for a Silverstripe ([http://silverstripe.org](http://silverstripe.org))
-installation. This includes the modules:
+### Getting started
+- Clone the repo locally
+- Install dependencies from source (`composer update --prefer-source`)
+- `cd app/cms-client/`
+  - We use an old version of node. You wight have to use nvm to downgrade to node 10.
+  - `yarn install` to get all the dependencies
+  - `yarn dev` to build the library in dev mode
+  - `yarn build` to build the library in prod mode
 
-Provided by [silverstripe/recipe-core]:
+### Making changes to silverstripe-react
+This code snippet will install the dependencies you need to work.
 
- * [framework](http://github.com/silverstripe/silverstripe-framework): Module including the base framework
- * [config](https://github.com/silverstripe/silverstripe-config): Core config library
- * [assets](http://github.com/silverstripe/silverstripe-assets): Filesystem module
+```
+cd vendor/silverstripe/admin
+yarn install
+cd ../../maxime-rainville/silverstripe-react
+yarn install
+```
 
-Provided by [silverstripe/recipe-cms]:
-
- * [admin](http://github.com/silverstripe/silverstripe-admin)
- * [asset-admin](http://github.com/silverstripe/silverstripe-asset-admin)
- * [campaign-admin](http://github.com/silverstripe/silverstripe-campaign-admin)
- * [versioned-admin](http://github.com/silverstripe/silverstripe-versioned-admin)
- * [cms](http://github.com/silverstripe/silverstripe-cms)
- * [errorpage](http://github.com/silverstripe/silverstripe-errorpage)
- * [reports](http://github.com/silverstripe/silverstripe-reports)
- * [graphql](http://github.com/silverstripe/silverstripe-graphql)
- * [session-manager](http://github.com/silverstripe/silverstripe-session-manager)
- * [siteconfig](http://github.com/silverstripe/silverstripe-siteconfig)
- * [versioned](http://github.com/silverstripe/silverstripe-versioned)
-
-This can be either added to an existing project or used as a project base for creating a
-fully featured Silverstripe CMS project.
-
-See the [recipe plugin](https://github.com/silverstripe/recipe-plugin) page for instructions on how
-Silverstripe recipes work.
+From, there just create a new branch of `maxime-rainville/silverstripe-react` and push it to GitHub.

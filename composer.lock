@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d123d2e72bf645849dc01d5f6b56075",
+    "content-hash": "ec238ec7a20f1aa8af95ec1c5648f7eb",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -1163,6 +1163,88 @@
                 }
             ],
             "time": "2020-09-24T12:39:55+00:00"
+        },
+        {
+            "name": "maxime-rainville/from-source",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxime-rainville/from-source.git",
+                "reference": "3606a2bb3396099d8fc704eba629dcb0ddabba17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxime-rainville/from-source/zipball/3606a2bb3396099d8fc704eba629dcb0ddabba17",
+                "reference": "3606a2bb3396099d8fc704eba629dcb0ddabba17",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/admin": "^1"
+            },
+            "default-branch": true,
+            "bin": [
+                "from-source"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Rainville",
+                    "email": "maxime@silverstripe.com"
+                }
+            ],
+            "description": "Utility to install `silverstripe-admin` from source for JS development",
+            "support": {
+                "issues": "https://github.com/maxime-rainville/from-source/issues",
+                "source": "https://github.com/maxime-rainville/from-source/tree/master"
+            },
+            "time": "2021-07-22T23:52:13+00:00"
+        },
+        {
+            "name": "maxime-rainville/recipe-react",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxime-rainville/recipe-react.git",
+                "reference": "c3e4fab6602c9ac5289b1b3d03e61549274941cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxime-rainville/recipe-react/zipball/c3e4fab6602c9ac5289b1b3d03e61549274941cf",
+                "reference": "c3e4fab6602c9ac5289b1b3d03e61549274941cf",
+                "shasum": ""
+            },
+            "require": {
+                "maxime-rainville/from-source": "*",
+                "maxime-rainville/silverstripe-react": "*"
+            },
+            "default-branch": true,
+            "type": "silverstripe-recipe",
+            "extra": {
+                "project-files": [
+                    "app/cms-client/*",
+                    "app/_config/recipe-react.yml"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Rainville",
+                    "email": "maxime@silverstripe.com"
+                }
+            ],
+            "description": "Quickly set up your Silverstripe CMS project for React development",
+            "support": {
+                "issues": "https://github.com/maxime-rainville/recipe-react/issues",
+                "source": "https://github.com/maxime-rainville/recipe-react/tree/master"
+            },
+            "time": "2021-07-23T01:27:39+00:00"
         },
         {
             "name": "maxime-rainville/silverstripe-react",
@@ -2513,104 +2595,6 @@
                 "source": "https://github.com/silverstripe/silverstripe-graphql-devtools/tree/master"
             },
             "time": "2021-03-31T03:38:04+00:00"
-        },
-        {
-            "name": "silverstripe/installer",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe/silverstripe-installer.git",
-                "reference": "9a342a58eeed74338499fd30fc531622d0aaf4ee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-installer/zipball/9a342a58eeed74338499fd30fc531622d0aaf4ee",
-                "reference": "9a342a58eeed74338499fd30fc531622d0aaf4ee",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3 || ^8.0",
-                "silverstripe-themes/simple": "~3.2.0",
-                "silverstripe/login-forms": "4.x-dev",
-                "silverstripe/recipe-cms": "4.x-dev",
-                "silverstripe/recipe-plugin": "^1.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5"
-            },
-            "default-branch": true,
-            "type": "silverstripe-recipe",
-            "extra": {
-                "project-files": [
-                    "app/_config/*",
-                    ".env.example"
-                ],
-                "public-files": [
-                    "assets/*",
-                    "favicon.ico"
-                ],
-                "resources-dir": "_resources"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "The SilverStripe Framework Installer",
-            "support": {
-                "issues": "https://github.com/silverstripe/silverstripe-installer/issues",
-                "source": "https://github.com/silverstripe/silverstripe-installer/tree/4"
-            },
-            "time": "2022-02-01T21:15:45+00:00"
-        },
-        {
-            "name": "silverstripe/login-forms",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe/silverstripe-login-forms.git",
-                "reference": "d1e6457857990abfddb04fadbddce25e96d065f6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-login-forms/zipball/d1e6457857990abfddb04fadbddce25e96d065f6",
-                "reference": "d1e6457857990abfddb04fadbddce25e96d065f6",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0",
-                "silverstripe/framework": "^4.10"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5",
-                "squizlabs/php_codesniffer": "^3"
-            },
-            "default-branch": true,
-            "type": "silverstripe-vendormodule",
-            "extra": {
-                "expose": [
-                    "client/dist"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "SilverStripe\\LoginForms\\": "src/",
-                    "SilverStripe\\LoginForms\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "A collection of templates for the CMS login screens",
-            "homepage": "https://github.com/silverstripe/login-forms",
-            "keywords": [
-                "login",
-                "silverstripe",
-                "styling",
-                "template"
-            ],
-            "support": {
-                "issues": "https://github.com/silverstripe/login-forms/issues",
-                "source": "https://github.com/silverstripe/silverstripe-login-forms/tree/4"
-            },
-            "time": "2022-02-10T11:20:35+00:00"
         },
         {
             "name": "silverstripe/mimevalidator",
@@ -7146,8 +7130,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "silverstripe/recipe-cms": 20,
-        "silverstripe/installer": 20,
         "maxime-rainville/silverstripe-react": 20,
+        "maxime-rainville/recipe-react": 20,
         "silverstripe/graphql-devtools": 20
     },
     "prefer-stable": true,

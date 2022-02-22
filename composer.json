@@ -8,8 +8,8 @@
         "php": "^7.3 || ^8.0",
         "silverstripe/recipe-plugin": "^1.5",
         "silverstripe/recipe-cms": "4.x-dev",
-        "silverstripe/installer": "4.x-dev",
         "maxime-rainville/silverstripe-react": "dev-feature/react-admin",
+        "maxime-rainville/recipe-react": "dev-master",
         "silverstripe/graphql-devtools": "1.x-dev",
         "silverstripe-themes/simple": "~3.2.0"
     },
