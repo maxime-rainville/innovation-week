@@ -1,43 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import Toolbar from 'components/Toolbar/Toolbar';
-import { Component as Breadcrumb } from 'components/Breadcrumb/Breadcrumb';
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { loadComponent } from 'lib/Injector';
 
-const breadcrumbs = [
-  {
-    text: 'Innovation Week',
-    href: 'innovation-week',
-  },
+// Top actions
+const topActions = [
+  { label: "Save", color: "primary", value: 'save'},
+  { label: "Delete", color: "secondary", value: 'delete'},
 ];
 
+// Bottom actions
+const bottomActions = [
+  { label: "Edit", icon: "edit", color: "primary", outline: true, value: 'edit' },
+];
 
-const InnovationWeek = ({ mdUrl }) => {
+const LeftAndMain = loadComponent('LeftAndMain');
+
+const InnovationWeek = () => {
   const [md, setMd] = useState('# Loading... please wait\n\nMark down work!!!');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(mdUrl);
-        const content = await response.text();
-        setMd(content);
-      } catch (error) {
-        setMd('# Could not load markdown file');
-        console.error(error);
-      }
-    };
-
-    fetchData();
-}, []);
-
+  const props = {
+    topActions,
+    bottomActions,
+  };
 
   return (
-    <div className="fill-height">
-      <Toolbar className="fill-width">
-        <Breadcrumb multiline crumbs={breadcrumbs} />
-
-      </Toolbar>
+    <LeftAndMain {...props}>
       <ReactMarkdown>{md}</ReactMarkdown>
-    </div>
+    </LeftAndMain>
   );
 };
 
