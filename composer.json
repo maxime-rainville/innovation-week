@@ -11,7 +11,8 @@
         "maxime-rainville/silverstripe-react": "dev-feature/react-admin",
         "maxime-rainville/recipe-react": "dev-master",
         "silverstripe/graphql-devtools": "1.x-dev",
-        "silverstripe-themes/simple": "~3.2.0"
+        "silverstripe-themes/simple": "~3.2.0",
+        "silverstripe/frameworktest": "^0.4.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
