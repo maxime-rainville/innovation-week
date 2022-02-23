@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { loadComponent } from 'lib/Injector';
+import { withRouter, Route, Switch } from 'react-router-dom';
+import Index from './Pages/Index';
+import Foo from './Pages/Foo';
+import Bar from './Pages/Bar';
 
 const breadcrumbs = [
   {
@@ -11,14 +14,17 @@ const breadcrumbs = [
 
 const LeftAndMain = loadComponent('LeftAndMain');
 
-const InnovationWeek = () => {
-  const [md, setMd] = useState('# Loading... please wait\n\nMark down work!!!');
-
+const InnovationWeek = ({ match, ...props}) => {
+  const { path } = match;
   return (
     <LeftAndMain>
-      <ReactMarkdown>{md}</ReactMarkdown>
+      <Switch>
+        <Route path={`${path}/bar/:paramOne?/:paramTwo?`} component={Bar} />
+        <Route path={`${path}/foo`} component={Foo} />
+        <Route path={path} component={Index} exact />
+      </Switch>
     </LeftAndMain>
   );
 };
 
-export default InnovationWeek;
+export default withRouter(InnovationWeek);

@@ -1,14 +1,11 @@
 import React from 'react';
-import { loadComponent } from 'lib/Injector';
 import { Link, withRouter } from 'react-router-dom';
 
-const LeftAndMain = loadComponent('LeftAndMain');
-
-const Page = ({ match: { params: { parameterOne, parameterTwo } } }) => (
-  <LeftAndMain>
-    This is a Bar page. parameterOne={parameterOne} parameterTwo={parameterTwo}
+const Page = ({ match: { params: { paramOne, paramTwo } } }) => (
+  <div>
+    This is a Bar page. parameterOne={paramOne} parameterTwo={paramTwo}
     <Link to="/admin/innovation">Back</Link>
-  </LeftAndMain>
+  </div>
 );
 
 export default withRouter(Page);

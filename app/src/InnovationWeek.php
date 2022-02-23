@@ -18,24 +18,17 @@ class InnovationWeek extends ReactAdmin
         'bar//$*' => 'index',
     ];
 
-
-    public function getClientConfig()
+    public function getComponent(): string
     {
-        $baseLink = $this->Link();
+        return 'InnovationWeek';
+    }
 
-        return array_merge(parent::getClientConfig(), [
-            'reactRouter' => true,
-            'randomRestEndpoint' => [
-                'url' => Controller::join_links($baseLink, 'api/random'),
-                'method' => 'post',
-                'payloadFormat' => 'urlencoded',
-            ],
-            'form' => [
-                'fileEditForm' => [
-                    'schemaUrl' => $this->Link('schema/fileEditForm')
-                ],
-            ],
-        ]);
+    public function getProps(): array
+    {
+        return [
+            'foo' => 'bar',
+            'baz' => 'qux',
+        ];
     }
 
 }

@@ -74,55 +74,45 @@
 "use strict";
 
 
-var _ReactRouteRegister = __webpack_require__(4);
+var _registerComponents = __webpack_require__("./src/boot/registerComponents.js");
 
-var _ReactRouteRegister2 = _interopRequireDefault(_ReactRouteRegister);
-
-var _Config = __webpack_require__(3);
-
-var _Config2 = _interopRequireDefault(_Config);
-
-var _Index = __webpack_require__("./src/components/Pages/Index.js");
-
-var _Index2 = _interopRequireDefault(_Index);
-
-var _Foo = __webpack_require__("./src/components/Pages/Foo.js");
-
-var _Foo2 = _interopRequireDefault(_Foo);
-
-var _Bar = __webpack_require__("./src/components/Pages/Bar.js");
-
-var _Bar2 = _interopRequireDefault(_Bar);
-
-var _NotFound = __webpack_require__("./src/components/Pages/NotFound.js");
-
-var _NotFound2 = _interopRequireDefault(_NotFound);
+var _registerComponents2 = _interopRequireDefault(_registerComponents);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.document.addEventListener('DOMContentLoaded', function () {
-
-  var sectionConfig = _Config2.default.getSection('InnovationWeek');
-
-  _ReactRouteRegister2.default.add({
-    path: '/',
-    routes: [{
-      path: '/' + sectionConfig.url + '/bar/:parameterOne?/:parameterTwo?',
-      component: _Bar2.default
-    }, {
-      path: '/' + sectionConfig.url + '/foo',
-      component: _Foo2.default
-    }, {
-      path: '/' + sectionConfig.url,
-      component: _Index2.default,
-      exact: true
-    }, {
-      path: '/',
-      component: _NotFound2.default,
-      exact: false
-    }]
-  });
+  (0, _registerComponents2.default)();
 });
+
+/***/ }),
+
+/***/ "./src/boot/registerComponents.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _Injector = __webpack_require__(2);
+
+var _Injector2 = _interopRequireDefault(_Injector);
+
+var _components = __webpack_require__("./src/components/index.js");
+
+var components = _interopRequireWildcard(_components);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+  _Injector2.default.component.registerMany(_extends({}, components));
+};
 
 /***/ }),
 
@@ -136,6 +126,70 @@ __webpack_require__("./src/boot/index.js");
 
 /***/ }),
 
+/***/ "./src/components/InnovationWeek.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Injector = __webpack_require__(2);
+
+var _reactRouterDom = __webpack_require__(1);
+
+var _Index = __webpack_require__("./src/components/Pages/Index.js");
+
+var _Index2 = _interopRequireDefault(_Index);
+
+var _Foo = __webpack_require__("./src/components/Pages/Foo.js");
+
+var _Foo2 = _interopRequireDefault(_Foo);
+
+var _Bar = __webpack_require__("./src/components/Pages/Bar.js");
+
+var _Bar2 = _interopRequireDefault(_Bar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var breadcrumbs = [{
+  text: 'Innovation Week',
+  href: 'innovation-week'
+}];
+
+var LeftAndMain = (0, _Injector.loadComponent)('LeftAndMain');
+
+var InnovationWeek = function InnovationWeek(_ref) {
+  var match = _ref.match,
+      props = _objectWithoutProperties(_ref, ['match']);
+
+  var path = match.path;
+
+  return _react2.default.createElement(
+    LeftAndMain,
+    null,
+    _react2.default.createElement(
+      _reactRouterDom.Switch,
+      null,
+      _react2.default.createElement(_reactRouterDom.Route, { path: path + '/bar/:paramOne?/:paramTwo?', component: _Bar2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: path + '/foo', component: _Foo2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: path, component: _Index2.default, exact: true })
+    )
+  );
+};
+
+exports.default = (0, _reactRouterDom.withRouter)(InnovationWeek);
+
+/***/ }),
+
 /***/ "./src/components/Pages/Bar.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -146,29 +200,25 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Injector = __webpack_require__(0);
-
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var LeftAndMain = (0, _Injector.loadComponent)('LeftAndMain');
-
 var Page = function Page(_ref) {
   var _ref$match$params = _ref.match.params,
-      parameterOne = _ref$match$params.parameterOne,
-      parameterTwo = _ref$match$params.parameterTwo;
+      paramOne = _ref$match$params.paramOne,
+      paramTwo = _ref$match$params.paramTwo;
   return _react2.default.createElement(
-    LeftAndMain,
+    'div',
     null,
     'This is a Bar page. parameterOne=',
-    parameterOne,
+    paramOne,
     ' parameterTwo=',
-    parameterTwo,
+    paramTwo,
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/admin/innovation' },
@@ -191,21 +241,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Injector = __webpack_require__(0);
-
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var LeftAndMain = (0, _Injector.loadComponent)('LeftAndMain');
-
 var Page = function Page() {
   return _react2.default.createElement(
-    LeftAndMain,
+    'div',
     null,
     'This is a Foo page',
     _react2.default.createElement(
@@ -230,21 +276,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Injector = __webpack_require__(0);
-
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var LeftAndMain = (0, _Injector.loadComponent)('LeftAndMain');
-
 var Page = function Page() {
   return _react2.default.createElement(
-    LeftAndMain,
+    'div',
     null,
     'This is the default landing page',
     _react2.default.createElement(
@@ -264,7 +306,7 @@ exports.default = Page;
 
 /***/ }),
 
-/***/ "./src/components/Pages/NotFound.js":
+/***/ "./src/components/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -273,68 +315,36 @@ exports.default = Page;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.InnovationWeek = undefined;
 
-var _react = __webpack_require__(1);
+var _InnovationWeek = __webpack_require__("./src/components/InnovationWeek.js");
 
-var _react2 = _interopRequireDefault(_react);
-
-var _Injector = __webpack_require__(0);
-
-var _reactRouterDom = __webpack_require__(2);
+var _InnovationWeek2 = _interopRequireDefault(_InnovationWeek);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var LeftAndMain = (0, _Injector.loadComponent)('LeftAndMain');
-
-var Page = function Page() {
-  return _react2.default.createElement(
-    LeftAndMain,
-    null,
-    'Invalid Route 404',
-    _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/admin/innovation' },
-      'Back home'
-    )
-  );
-};
-
-exports.default = Page;
+exports.InnovationWeek = _InnovationWeek2.default;
 
 /***/ }),
 
 /***/ 0:
 /***/ (function(module, exports) {
 
-module.exports = Injector;
+module.exports = React;
 
 /***/ }),
 
 /***/ 1:
 /***/ (function(module, exports) {
 
-module.exports = React;
+module.exports = ReactRouterDom;
 
 /***/ }),
 
 /***/ 2:
 /***/ (function(module, exports) {
 
-module.exports = ReactRouterDom;
-
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports) {
-
-module.exports = Config;
-
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports) {
-
-module.exports = ReactRouteRegister;
+module.exports = Injector;
 
 /***/ })
 
