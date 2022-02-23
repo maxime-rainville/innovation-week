@@ -19,18 +19,6 @@ class InnovationWeek extends ReactAdmin
     ];
 
 
-    public function getProps(): array
-    {
-        return [
-            'mdUrl' => ModuleResourceLoader::singleton()->resolveURL('app/help/index.md')
-        ];
-    }
-
-    public function getComponent(): string
-    {
-        return 'InnovationWeek';
-    }
-
     public function getClientConfig()
     {
         $baseLink = $this->Link();
