@@ -12,11 +12,6 @@ const InnovationWeek = ({ match, history: { push }, ...props }) => {
 
   console.dir(props);
 
-  const breadcrumbs = () => {
-    const urlSegments = window.location.pathname.split('/');
-    return props.breadcrumbs.filter(breadcrumb => urlSegments.includes(breadcrumb.href));
-  }
-
   const topActions = () => {
 
     let actions = [];
@@ -48,7 +43,7 @@ const InnovationWeek = ({ match, history: { push }, ...props }) => {
   };
 
   return (
-    <LeftAndMain topActions={topActions()} breadcrumbs={breadcrumbs()}>
+    <LeftAndMain topActions={topActions()} breadcrumbs={props.breadcrumbs} currentPath={path}>
       <Switch>
         <Route path={`${path}/bar/:paramOne?/:paramTwo?`} component={Bar} />
         <Route path={`${path}/foo`} component={Foo} />
