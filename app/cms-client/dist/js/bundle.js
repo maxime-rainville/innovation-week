@@ -169,13 +169,41 @@ var LeftAndMain = (0, _Injector.loadComponent)('LeftAndMain');
 
 var InnovationWeek = function InnovationWeek(_ref) {
   var match = _ref.match,
-      props = _objectWithoutProperties(_ref, ['match']);
+      push = _ref.history.push,
+      props = _objectWithoutProperties(_ref, ['match', 'history']);
 
   var path = match.path;
 
+
+  console.dir(props);
+
+  var topActions = [{
+    color: 'primary',
+    label: 'Home',
+    icon: 'home',
+    value: 'home',
+    onClick: function onClick() {
+      push(path);
+    }
+  }, {
+    color: 'secondary',
+    label: 'Foo',
+    value: 'foo',
+    onClick: function onClick() {
+      push(path + '/foo');
+    }
+  }, {
+    color: 'secondary',
+    label: 'Bar',
+    value: 'bar',
+    onClick: function onClick() {
+      push(path + '/bar');
+    }
+  }];
+
   return _react2.default.createElement(
     LeftAndMain,
-    null,
+    { topActions: topActions },
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,

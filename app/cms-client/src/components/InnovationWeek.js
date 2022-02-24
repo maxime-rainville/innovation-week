@@ -14,10 +14,41 @@ const breadcrumbs = [
 
 const LeftAndMain = loadComponent('LeftAndMain');
 
-const InnovationWeek = ({ match, ...props}) => {
+const InnovationWeek = ({ match, history: { push }, ...props}) => {
   const { path } = match;
+
+  console.dir(props);
+
+  const topActions = [
+    {
+      color: 'primary',
+      label: 'Home',
+      icon: 'home',
+      value: 'home',
+      onClick: () => {
+        push(path);
+      }
+    },
+    {
+      color: 'secondary',
+      label: 'Foo',
+      value: 'foo',
+      onClick: () => {
+        push(`${path}/foo`);
+      }
+    },
+    {
+      color: 'secondary',
+      label: 'Bar',
+      value: 'bar',
+      onClick: () => {
+        push(`${path}/bar`);
+      }
+    },
+  ];
+
   return (
-    <LeftAndMain>
+    <LeftAndMain topActions={topActions}>
       <Switch>
         <Route path={`${path}/bar/:paramOne?/:paramTwo?`} component={Bar} />
         <Route path={`${path}/foo`} component={Foo} />
