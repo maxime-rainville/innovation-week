@@ -334,6 +334,51 @@ exports.default = Page;
 
 /***/ }),
 
+/***/ "./src/components/Widget.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Widget = function Widget(_ref) {
+  var lastname = _ref.lastname,
+      firstname = _ref.firstname,
+      email = _ref.email;
+  return _react2.default.createElement(
+    'ul',
+    null,
+    _react2.default.createElement(
+      'li',
+      null,
+      firstname
+    ),
+    _react2.default.createElement(
+      'li',
+      null,
+      lastname
+    ),
+    _react2.default.createElement(
+      'li',
+      null,
+      email
+    )
+  );
+};
+
+exports.default = Widget;
+
+/***/ }),
+
 /***/ "./src/components/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -343,15 +388,20 @@ exports.default = Page;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.InnovationWeek = undefined;
+exports.Widget = exports.InnovationWeek = undefined;
 
 var _InnovationWeek = __webpack_require__("./src/components/InnovationWeek.js");
 
 var _InnovationWeek2 = _interopRequireDefault(_InnovationWeek);
 
+var _Widget = __webpack_require__("./src/components/Widget.js");
+
+var _Widget2 = _interopRequireDefault(_Widget);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.InnovationWeek = _InnovationWeek2.default;
+exports.Widget = _Widget2.default;
 
 /***/ }),
 
