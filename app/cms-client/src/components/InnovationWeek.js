@@ -17,8 +17,6 @@ const LeftAndMain = loadComponent('LeftAndMain');
 const InnovationWeek = ({ match, history: { push }, ...props}) => {
   const { path } = match;
 
-  console.dir(props);
-
   const topActions = [
     {
       color: 'primary',
@@ -47,8 +45,16 @@ const InnovationWeek = ({ match, history: { push }, ...props}) => {
     },
   ];
 
+  const currentPath = props.location.pathname;
+
+  const tabs = [
+    { title: "FirstTab", link: `${path}/`, currentPath: currentPath },
+    { title: "SecondTab", link: `${path}/first-tab`, currentPath: currentPath },
+    { title: "ThirdTab", link: `${path}/second-tab`, currentPath: currentPath },
+  ];
+
   return (
-    <LeftAndMain topActions={topActions}>
+    <LeftAndMain topActions={topActions} tabs={tabs}>
       <Switch>
         <Route path={`${path}/bar/:paramOne?/:paramTwo?`} component={Bar} />
         <Route path={`${path}/foo`} component={Foo} />
