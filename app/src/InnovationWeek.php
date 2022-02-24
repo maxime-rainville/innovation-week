@@ -1,9 +1,8 @@
 <?php
 
 use MaximeRainville\SilverstripeReact\ReactAdmin;
-use PharIo\Manifest\Requirement;
+use SilverStripe\Control\Controller;
 use SilverStripe\Core\Manifest\ModuleResourceLoader;
-use SilverStripe\View\Requirements;
 
 class InnovationWeek extends ReactAdmin
 {
@@ -11,16 +10,25 @@ class InnovationWeek extends ReactAdmin
 
     private static $menu_title = 'Innovation Week';
 
-    public function getProps(): array
-    {
-        return [
-            'mdUrl' => ModuleResourceLoader::singleton()->resolveURL('app/help/index.md')
-        ];
-    }
+    private static $url_handlers = [
+        // Only /admin/innovation/foo is a valid route
+        'foo//' => 'index',
+
+        // This route accepts parameters, so we give a wild card
+        'bar//$*' => 'index',
+    ];
 
     public function getComponent(): string
     {
         return 'InnovationWeek';
+    }
+
+    public function getProps(): array
+    {
+        return [
+            'foo' => 'bar',
+            'baz' => 'qux',
+        ];
     }
 
 }

@@ -1,5 +1,5 @@
 /* global window */
-import registerComponents from 'boot/registerComponents';
+import registerComponents from './registerComponents';
 
 window.document.addEventListener('DOMContentLoaded', () => {
   registerComponents();
