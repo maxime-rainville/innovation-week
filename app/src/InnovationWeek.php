@@ -26,8 +26,21 @@ class InnovationWeek extends ReactAdmin
     public function getProps(): array
     {
         return [
-            'foo' => 'bar',
-            'baz' => 'qux',
+            'breadcrumbs' => [
+                [
+                    'text'=> 'Home',
+                    'href'=> '',
+                ],
+                [
+                    'text'=> 'Foo',
+                    'href'=> 'foo',
+                ],
+                [
+                    'text'=> 'Bar',
+                    'href'=> 'bar',
+                ],
+
+            ]
         ];
     }
 
