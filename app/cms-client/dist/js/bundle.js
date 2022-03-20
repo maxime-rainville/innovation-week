@@ -767,11 +767,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var breadcrumbs = [{
-  text: 'Todo List',
-  href: 'innovation-week'
-}];
-
 var LeftAndMain = (0, _Injector.loadComponent)('LeftAndMain');
 
 var Gallery = function Gallery(_ref) {
@@ -797,7 +792,8 @@ var Gallery = function Gallery(_ref) {
   }];
 
   var tabProps = {
-    tabs: [{ title: 'Todo', current: true }, { title: 'Done' }]
+    current: 'done',
+    tabs: [{ title: 'Todo', key: 'todo' }, { title: 'Done', key: 'done' }]
   };
 
   var onInsert = function onInsert(data) {
@@ -807,7 +803,7 @@ var Gallery = function Gallery(_ref) {
 
   return _react2.default.createElement(
     LeftAndMain,
-    _extends({ topActions: topActions, breadcrumbs: breadcrumbs }, tabProps),
+    { topActions: topActions, title: 'Todo List', tabProps: tabProps },
     _react2.default.createElement(
       'div',
       { className: 'todo-flex-box' },

@@ -6,13 +6,6 @@ import Item from './Item';
 import Form from './Form';
 import * as todoActions from 'state/todo/TodoActions';
 
-const breadcrumbs = [
-  {
-    text: 'Todo List',
-    href: 'innovation-week',
-  },
-];
-
 const LeftAndMain = loadComponent('LeftAndMain');
 
 const Gallery = ({ match: {path}, history: { push }, todos, actions, ...props}) => {
@@ -32,9 +25,10 @@ const Gallery = ({ match: {path}, history: { push }, todos, actions, ...props}) 
   ];
 
   const tabProps = {
+    current: 'done',
     tabs: [
-      { title: 'Todo', current: true },
-      { title: 'Done' }
+      { title: 'Todo', key: 'todo' },
+      { title: 'Done', key: 'done' }
     ]
   };
 
@@ -44,7 +38,7 @@ const Gallery = ({ match: {path}, history: { push }, todos, actions, ...props}) 
   };
 
   return (
-    <LeftAndMain topActions={topActions} breadcrumbs={breadcrumbs} {...tabProps}>
+    <LeftAndMain topActions={topActions} title="Todo List" tabProps={tabProps}>
       <div className="todo-flex-box">
         {todos.map(todo => <Item key={todo.id} {...todo} path={`${path}/show`} />)}
       </div>
