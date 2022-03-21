@@ -782,13 +782,21 @@ var Gallery = function Gallery(_ref) {
       setShowModal = _useState2[1];
 
   var topActions = [{
-    color: 'primary',
-    label: 'Add',
+    children: 'Add',
     icon: 'plus',
-    value: 'add',
+    key: 'add',
     onClick: function onClick() {
       setShowModal(true);
     }
+  }, {
+    children: 'Something else',
+    icon: 'minus',
+    key: 'minus',
+    className: 'mr-auto'
+  }, {
+    children: 'Filter',
+    icon: 'filter',
+    key: 'filter'
   }];
 
   var tabProps = {
@@ -929,7 +937,7 @@ var Show = function Show(_ref) {
 
   var topActions = [{
     color: 'primary',
-    label: 'Mark has done',
+    title: 'Mark has done',
     icon: 'check-mark',
     value: 'done',
     onClick: function onClick() {

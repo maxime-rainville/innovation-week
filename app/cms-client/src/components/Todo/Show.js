@@ -26,7 +26,7 @@ const Show = ({ history: { push }, todo, path, actions, ...props}) => {
   const topActions = [
     {
       color: 'primary',
-      label: 'Mark has done',
+      title: 'Mark has done',
       icon: 'check-mark',
       value: 'done',
       onClick: () => {

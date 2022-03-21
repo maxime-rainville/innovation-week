@@ -665,16 +665,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.4.1",
+            "version": "7.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "ee0a041b1760e6a53d2a39c8c34115adc2af2c79"
+                "reference": "ac1ec1cd9b5624694c3a40be801d94137afb12b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ee0a041b1760e6a53d2a39c8c34115adc2af2c79",
-                "reference": "ee0a041b1760e6a53d2a39c8c34115adc2af2c79",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ac1ec1cd9b5624694c3a40be801d94137afb12b4",
+                "reference": "ac1ec1cd9b5624694c3a40be801d94137afb12b4",
                 "shasum": ""
             },
             "require": {
@@ -769,7 +769,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.4.1"
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.2"
             },
             "funding": [
                 {
@@ -785,7 +785,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-06T18:43:05+00:00"
+            "time": "2022-03-20T14:16:28+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -873,16 +873,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.1.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "089edd38f5b8abba6cb01567c2a8aaa47cec4c72"
+                "reference": "c94a94f120803a18554c1805ef2e539f8285f9a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/089edd38f5b8abba6cb01567c2a8aaa47cec4c72",
-                "reference": "089edd38f5b8abba6cb01567c2a8aaa47cec4c72",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/c94a94f120803a18554c1805ef2e539f8285f9a2",
+                "reference": "c94a94f120803a18554c1805ef2e539f8285f9a2",
                 "shasum": ""
             },
             "require": {
@@ -906,7 +906,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.2-dev"
                 }
             },
             "autoload": {
@@ -968,7 +968,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.1.0"
+                "source": "https://github.com/guzzle/psr7/tree/2.2.1"
             },
             "funding": [
                 {
@@ -984,7 +984,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-06T17:43:30+00:00"
+            "time": "2022-03-20T21:55:58+00:00"
         },
         {
             "name": "intervention/image",
@@ -1566,12 +1566,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/maxime-rainville/silverstripe-react.git",
-                "reference": "fd1d72625740ce4bc9d9bcadcf514ef846786ba4"
+                "reference": "6aea814e877e655969c00509239ad87b5c23663f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maxime-rainville/silverstripe-react/zipball/fd1d72625740ce4bc9d9bcadcf514ef846786ba4",
-                "reference": "fd1d72625740ce4bc9d9bcadcf514ef846786ba4",
+                "url": "https://api.github.com/repos/maxime-rainville/silverstripe-react/zipball/6aea814e877e655969c00509239ad87b5c23663f",
+                "reference": "6aea814e877e655969c00509239ad87b5c23663f",
                 "shasum": ""
             },
             "require": {
@@ -1607,7 +1607,7 @@
                 "issues": "https://github.com/maxime-rainville/silverstripe-react/issues",
                 "source": "https://github.com/maxime-rainville/silverstripe-react/tree/feature/react-admin"
             },
-            "time": "2022-03-20T10:41:14+00:00"
+            "time": "2022-03-21T11:13:28+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2454,12 +2454,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-campaign-admin.git",
-                "reference": "c4da3372d05f58d9eeab1ed7c9d09c3fc76c092b"
+                "reference": "5e4fca5a8eaeb6306987ec64565cca2642c6d3f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-campaign-admin/zipball/c4da3372d05f58d9eeab1ed7c9d09c3fc76c092b",
-                "reference": "c4da3372d05f58d9eeab1ed7c9d09c3fc76c092b",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-campaign-admin/zipball/5e4fca5a8eaeb6306987ec64565cca2642c6d3f6",
+                "reference": "5e4fca5a8eaeb6306987ec64565cca2642c6d3f6",
                 "shasum": ""
             },
             "require": {
@@ -2516,7 +2516,7 @@
                 "issues": "https://github.com/silverstripe/silverstripe-campaign-admin/issues",
                 "source": "https://github.com/silverstripe/silverstripe-campaign-admin/tree/1"
             },
-            "time": "2022-03-10T02:01:51+00:00"
+            "time": "2022-03-20T20:56:38+00:00"
         },
         {
             "name": "silverstripe/cms",

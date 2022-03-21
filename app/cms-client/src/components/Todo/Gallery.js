@@ -14,13 +14,21 @@ const Gallery = ({ match: {path}, history: { push }, todos, actions, ...props}) 
 
   const topActions = [
     {
-      color: 'primary',
-      label: 'Add',
+      children: 'Add',
       icon: 'plus',
-      value: 'add',
-      onClick: () => {
-       setShowModal(true);
-      }
+      key: 'add',
+      onClick: () => { setShowModal(true); }
+    },
+    {
+      children: 'Something else',
+      icon: 'minus',
+      key: 'minus',
+      className: 'mr-auto'
+    },
+    {
+      children: 'Filter',
+      icon: 'filter',
+      key: 'filter',
     },
   ];
 
